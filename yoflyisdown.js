@@ -41,7 +41,7 @@ var server = http.createServer(function (request, response) {
 
     else if(request.method == 'GET') {
       console.log("get method wooo");
-      console.log("counter is" +)
+      console.log("counter is" + counter);
      var counter = {counter: counter};
      //var json_counter = JSON.stringify(counter);
      response.writeHead(200, {'Content-Type' : 'application/json', 'Content-Length': json_counter.length });

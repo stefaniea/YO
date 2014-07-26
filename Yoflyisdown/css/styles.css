@@ -1,34 +1,4 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>index</title>
-  <link rel="stylesheet" href="css/standardize.css">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="body index clearfix">
-  <header class="_container _container-1">
-    <div class="title title-1">YO FLY IS DOWN</div>
-  </header>
-  <div class="body body-1 clearfix">
-    <p class="explanation">Want to save someone an embarrassing moment?&nbsp;Type in their YO handle below to lift their spirits and their zipper!&nbsp;</p>
-    <form method="POST" action="http://yohack.herokuapp.com/yoflyisdown.js">
-    <input class="_input" name="Input" placeholder="Username" type="text">
-    <button class="_button">Submit</button>
-  </form>
-  </div>
-  <footer class="_container _container-2 clearfix">
-    <p class="numsaved numsaved-1">Embarrassments saved: PRICELESS<br></p>
-    <div class="zipped zipped-1">
-      <p class="numzipped">Flies Zipped: &nbsp;<br></p>
-      <div class="number">0</div>
-    </div>
-  </footer>
-
-  <script src="js/jquery-min.js"></script>
-  <style>
-  body {
+body {
   background-color: rgb(26, 130, 167);
   font: 400 24px/1.38 Helvetica;
   color: rgb(255, 255, 255);
@@ -108,7 +78,7 @@
   display: block;
   position: absolute;
   top: 194px;
-  left: 66.529558701%;
+  left: 64.529558701%;
   z-index: 5;
   width: 13.4054954204%;
   height: 74px;
@@ -319,6 +289,3 @@
     margin-left: auto;
   }
 }
-  </style>
-</body>
-</html>
