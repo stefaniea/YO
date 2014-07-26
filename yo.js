@@ -1,3 +1,8 @@
+yo = {
+  YoAll: YoAll,
+  YoUser: YoUser,
+};
+
 var http = require('http');
 var http = require('http');
 http.createServer(function (req, res) {
