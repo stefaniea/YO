@@ -14,6 +14,10 @@ var server = http.createServer(function (request, response) {
     // user told us their name in the GET request, ex: http://host:8000/?name=Tom
     response.end('Hello ' + queryData.username + '\n');
     console.log("hello" + queryData.username);
+   // var random = (int) 
+    //if();
+    YoUser(username);
+    
 
   } else {
     response.end("Hello World\n");
@@ -23,7 +27,7 @@ var server = http.createServer(function (request, response) {
 // Listen on port 8000, IP defaults to 127.0.0.1
 server.listen(process.env.PORT || 5000);
 
-/*
+
 function YoUser(user) {
   // Build the post string from an object
   var post_data = { api_token : "343e22db-008c-12c4-786b-52c66899280", username : 'STEFALFONSO' }.toString(); //this one not working
@@ -53,7 +57,7 @@ function YoUser(user) {
   // post the data
   post_req.write(post_data2);
   post_req.end();
-}*/
+}
 
 
 //var username = getQueryVariable("username");
