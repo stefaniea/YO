@@ -2,23 +2,28 @@ var http = require('http');
 var yo = require('./yo.js');
 
 console.log("got to callback js woot wooot");
-//gets parameter either from url if available or local storage if not
-    function getQueryVariable(variable) {
-        /*var query = window.location.search.substring(1);
-        var vars = query.split("&");
-        for (var i=0;i<vars.length;i++) {
-            var pair = vars[i].split("=");
-            if (pair[0] == variable) {
-                return pair[1];
-            }
-        } 
-        return "null";*/
-        var url = require('url');
-		var url_parts = url.parse(http.request.url, true);
-		var query = url_parts.query;
-		return query; 
-    }
+var http = require('http');
+var url = require('url');
 
+// Configure our HTTP server to respond with Hello World to all requests.
+var server = http.createServer(function (request, response) {
+  var queryData = url.parse(request.url, true).query;
+  response.writeHead(200, {"Content-Type": "text/plain"});
+
+  if (queryData.username) {
+    // user told us their name in the GET request, ex: http://host:8000/?name=Tom
+    response.end('Hello ' + queryData.username + '\n');
+    console.log("hello" + queryData.username);
+
+  } else {
+    response.end("Hello World\n");
+  }
+});
+
+// Listen on port 8000, IP defaults to 127.0.0.1
+server.listen(process.env.PORT || 5000);
+
+/*
 function YoUser(user) {
   // Build the post string from an object
   var post_data = { api_token : "343e22db-008c-12c4-786b-52c66899280", username : 'STEFALFONSO' }.toString(); //this one not working
@@ -48,13 +53,13 @@ function YoUser(user) {
   // post the data
   post_req.write(post_data2);
   post_req.end();
-}
+}*/
 
 
-var username = getQueryVariable("username");
+//var username = getQueryVariable("username");
 /*var user = $(document.createElement('p'));
 var d = new Date();
 user.innerHTML = "user: " + username + " at " + d.getTime();
 $(document.getElementById("yo")).append(user);*/
-YoUser(username);
-console.log("CALLBACK YESSSSS" +  username);
+//YoUser(username);
+//console.log("CALLBACK YESSSSS" +  username);
