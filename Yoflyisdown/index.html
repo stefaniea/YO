@@ -15,6 +15,13 @@
   <button class="_button">Submit&nbsp;</button>
   </form>
 </body>
+<script>
+$.get( "yohack.herokuapp.com/yoflyisdown.js", function( data ) {
+  $( ".result" ).html( data );
+  alert( "Load was performed." );
+  console.log("result was: "+data);
+});
+</script>
 <style>
 body {
   background-color: rgb(155, 89, 182);
