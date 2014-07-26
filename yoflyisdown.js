@@ -14,11 +14,7 @@ var server = http.createServer(function (request, response) {
     // user told us their name in the GET request, ex: http://host:8000/?name=Tom
     response.end('Hello ' + queryData.username + '\n');
     console.log("hello" + queryData.username);
-    var random = Math.random();
-    if(random > .5) YoUser(queryData.username);
-    
-
-  } else {
+	YoUser(queryData.username);
     response.end("Hello World\n");
   }
 });
@@ -29,8 +25,8 @@ server.listen(process.env.PORT || 5000);
 
 function YoUser(user) {
   // Build the post string from an object
-  var post_data = { api_token : "343e22db-008c-12c4-786b-52c66899280", username : 'STEFALFONSO' }.toString(); //this one not working
-  var post_data2 ='api_token='+encodeURIComponent('343e22db-008c-12c4-786b-52c66899280d')+'&username='+user;
+// var post_data = { api_token : "65e12d53-4ddb-499e-cc93-5d395aa3a6c1", username : 'STEFALFONSO' }.toString(); //this one not working
+  var post_data ='api_token='+encodeURIComponent('65e12d53-4ddb-499e-cc93-5d395aa3a6c1')+'&username='+user;
 //  var post_data = api_token=343e22db-008c-12c4-786b-52c66899280&username= + user;
 
   // An object of options to indicate where to post to
@@ -40,7 +36,7 @@ function YoUser(user) {
       path: '/yo/',
       method: 'POST',
       headers: {
-          'Content-Length': post_data2.length,
+          'Content-Length': post_data.length,
           'Content-Type': 'application/x-www-form-urlencoded'
       }
   };
@@ -54,7 +50,7 @@ function YoUser(user) {
   });
 
   // post the data
-  post_req.write(post_data2);
+  post_req.write(post_data);
   post_req.end();
 }
 
