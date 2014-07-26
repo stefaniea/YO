@@ -14,9 +14,8 @@ var server = http.createServer(function (request, response) {
     // user told us their name in the GET request, ex: http://host:8000/?name=Tom
     response.end('Hello ' + queryData.username + '\n');
     console.log("hello" + queryData.username);
-   // var random = (int) 
-    //if();
-    YoUser(queryData.username);
+    var random = Math.random();
+    if(random > .5) YoUser(queryData.username);
     
 
   } else {
