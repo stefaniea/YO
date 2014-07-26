@@ -40,9 +40,6 @@ var server = http.createServer(function (request, response) {
 
         });
     }
-    if(request.method == 'GET'){ 
-        
-    }
 });
 
 // Listen on port 8000, IP defaults to 127.0.0.1
