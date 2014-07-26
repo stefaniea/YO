@@ -12,7 +12,7 @@ console.log("got to callback js woot wooot");
         } 
         return "null";*/
         var url = require('url');
-		var url_parts = url.parse(request.url, true);
+		var url_parts = url.parse(http.request.url, true);
 		var query = url_parts.query;
 		return query; 
     }
