@@ -1,7 +1,6 @@
 console.log("got to yoflyisdownnnn js woot wooot");
 var http = require('http');
 var url = require('url');
-var counter = 0;
 var qs = require('querystring');
 
 
@@ -31,10 +30,7 @@ var server = http.createServer(function (request, response) {
 
             var POST = qs.parse(body);
             console.log("postyayyy " + POST + " user " + POST.username );
-            if(POST.username) {
             YoUser(POST.username);
-            counter++;
-            }
             console.log("counter is" + counter);
             // use POST
 
