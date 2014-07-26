@@ -1,1 +1,1 @@
-yo: node yo.js
+web: node yo.js
