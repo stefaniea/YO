@@ -16,7 +16,7 @@ var server = http.createServer(function (request, response) {
     console.log("hello" + queryData.username);
    // var random = (int) 
     //if();
-    YoUser(username);
+    YoUser(queryData.username);
     
 
   } else {
