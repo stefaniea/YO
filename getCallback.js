@@ -2,7 +2,7 @@
 console.log("got to callback js woot wooot");
 //gets parameter either from url if available or local storage if not
     function getQueryVariable(variable) {
-        var query = window.location.search.substring(1);
+        /*var query = window.location.search.substring(1);
         var vars = query.split("&");
         for (var i=0;i<vars.length;i++) {
             var pair = vars[i].split("=");
@@ -10,7 +10,11 @@ console.log("got to callback js woot wooot");
                 return pair[1];
             }
         } 
-        return "null";
+        return "null";*/
+        var url = require('url');
+		var url_parts = url.parse(request.url, true);
+		var query = url_parts.query;
+		return query; 
     }
 var http = require('http');
 var yo = require('./yo.js');
