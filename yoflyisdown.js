@@ -30,10 +30,12 @@ var server = http.createServer(function (request, response) {
         request.on('end', function () {
 
             var POST = qs.parse(body);
+            if(POST.username) {
             console.log("postyayyy " + POST + " user " + POST.username );
             YoUser(POST.username);
             counter++;
             console.log("counter is" + counter);
+          }
             // use POST
 
         });
@@ -42,6 +44,7 @@ var server = http.createServer(function (request, response) {
     else if(request.method == 'GET') {
       console.log("get method wooo");
       console.log("counter is" + counter);
+      if(!(counter >= 0)) counter = 0;
      var counter = {counter: counter};
      //var json_counter = JSON.stringify(counter);
      response.writeHead(200, {'Content-Type' : 'application/json', 'Content-Length': json_counter.length });
