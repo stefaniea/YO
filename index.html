@@ -1,0 +1,108 @@
+<html>
+<head>
+  <title>YO.</title>
+  <script src="jquery.min.js"></script> <!--where does this go lol-->
+</head>
+<body>
+  <p>asdfghj</p>
+</body>
+<script>
+
+/*var createCORSRequest = function(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // Most browsers.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // IE8 & IE9
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+};
+
+var url = 'http://api.justyo.co/yoall/?apikey=343e22db-008c-12c4-786b-52c66899280d';
+var method = 'POST';
+var xhr = createCORSRequest(method, url);
+
+xhr.onload = function() {
+  // Success code goes here.
+};
+
+xhr.onerror = function() {
+  // Error code goes here.
+};
+
+xhr.send();
+
+  //so for now it YO's all when you land on the page
+  function yoAll() {
+    var APIKEY = "343e22db-008c-12c4-786b-52c66899280d";
+    $.post("http://api.justyo.co/yoall/",{apikey: APIKEY},function(result){
+      $("span").html(result);
+    });
+  }
+  makeCorsRequest();
+  //yoAll();*/
+
+
+   $.ajax({
+            url: "http://api.justyo.co/yoall/",
+            type: "GET",
+            crossDomain: true,
+            data: {api_token : "343e22db-008c-12c4-786b-52c66899280d" },
+            dataType: "json",
+            success: function (response) {
+                var resp = JSON.parse(response)
+                alert(resp.status);
+            },
+            error: function (xhr, status) {
+                alert("error");
+            }
+               });
+
+/*var http = require(http);
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/');
+
+function YoAll() {
+  // Build the post string from an object
+  var post_data = 'api_token='+encodeURIComponent('343e22db-008c-12c4-786b-52c66899280d');
+
+  // An object of options to indicate where to post to
+  var post_options = {
+      hostname: 'api.justyo.co',
+      port: '80',
+      path: '/yoall',
+      method: 'POST',
+      headers: {
+          'Content-Length': post_data.length
+      }
+  };
+
+  // Set up the request
+  var post_req = http.request(post_options, function(res) {
+      console.log(res.statusCode);
+      res.on('data', function (chunk) {
+          console.log('Response: ' + chunk);
+      });
+  });
+
+  // post the data
+  post_req.write(post_data);
+  post_req.end();
+
+}
+
+setTimeout(function(){}, 10000);
+
+YoAll();*/
+</script>
+<script src="jquery.min.js"></script>
+</html>

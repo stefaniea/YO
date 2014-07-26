@@ -1,0 +1,9 @@
+{
+  "name": "a-simple-webserver",
+  "version": "0.0.1",
+  "description": "A simple http server written in Node.js",
+  "dependencies": {
+   },
+  "engine": "node 0.10.x",
+  "request": "latest"
+}
