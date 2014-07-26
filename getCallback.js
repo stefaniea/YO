@@ -1,3 +1,5 @@
+
+console.log("got to callback js woot wooot");
 //gets parameter either from url if available or local storage if not
     function getQueryVariable(variable) {
         var query = window.location.search.substring(1);
@@ -11,9 +13,9 @@
         return "null";
     }
 var username = getQueryVariable("username");
-var user = $(document.createElement('p'));
+/*var user = $(document.createElement('p'));
 var d = new Date();
 user.innerHTML = "user: " + username + " at " + d.getTime();
-$(document.getElementById("yo")).append(user);
+$(document.getElementById("yo")).append(user);*/
 yo.YoUser(username);
 console.log("CALLBACK YESSSSS" +  username);
