@@ -19,7 +19,7 @@
 <script>
 $.get( "yohack.herokuapp.com/yoflyisdown.js", function( data ) {
   $( ".result" ).html( data );
-  alert( "Load was performed." + data);
+  alert( "Load was performed." + data.counter);
   
 });
 </script>
