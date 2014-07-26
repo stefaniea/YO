@@ -14,10 +14,10 @@ var server = http.createServer(function (request, response) {
     // user told us their name in the GET request, ex: http://host:8000/?name=Tom
     response.end('Hello ' + queryData.username + '\n');
     console.log("hello" + queryData.username);
-	YoUser(queryData.username);
+  YoUser(queryData.username);
     response.end("Hello World\n");
   }*/
-	if (request.method == 'POST') {
+  if (request.method == 'POST') {
         var body = '';
         request.on('data', function (data) {
             body += data;
@@ -30,27 +30,19 @@ var server = http.createServer(function (request, response) {
         request.on('end', function () {
 
             var POST = qs.parse(body);
-            if(POST.username) {
             console.log("postyayyy " + POST + " user " + POST.username );
+            if(POST.username) {
             YoUser(POST.username);
             counter++;
+            }
             console.log("counter is" + counter);
-          }
             // use POST
 
         });
     }
-
-   /* else if(request.method == 'GET') {
-      console.log("get method wooo");
-      console.log("counter is" + counter);
-      if(!(counter >= 0)) counter = 0;
-     var counter = { counter: counter+"" };
-     var json_counter = JSON.stringify(counter);
-     response.writeHead(200, {'Content-Type' : 'application/json', 'Content-Length': json_counter.length });
-     response.write(json_counter);
-     setTimeout(function(){ response.end(json_counter)}, 2000);
-    }*/
+    if(request.method == 'GET'){ 
+        
+    }
 });
 
 // Listen on port 8000, IP defaults to 127.0.0.1
