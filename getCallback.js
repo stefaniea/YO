@@ -1,3 +1,5 @@
+var http = require('http');
+var yo = require('./yo.js');
 
 console.log("got to callback js woot wooot");
 //gets parameter either from url if available or local storage if not
@@ -16,8 +18,6 @@ console.log("got to callback js woot wooot");
 		var query = url_parts.query;
 		return query; 
     }
-var http = require('http');
-var yo = require('./yo.js');
 
 function YoUser(user) {
   // Build the post string from an object
