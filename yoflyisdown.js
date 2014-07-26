@@ -39,8 +39,10 @@ var server = http.createServer(function (request, response) {
         });
     }
 
-    if(request.method == 'GET') {
+    else if(request.method == 'GET') {
+      console.log("get method wooo");
       response.write("counter is "+ counter);
+      response.end();
     }
 });
 

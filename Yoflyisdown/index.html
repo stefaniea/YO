@@ -15,11 +15,12 @@
   <button class="_button">Submit&nbsp;</button>
   </form>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script>
 $.get( "yohack.herokuapp.com/yoflyisdown.js", function( data ) {
   $( ".result" ).html( data );
-  alert( "Load was performed." );
-  console.log("result was: "+data);
+  alert( "Load was performed." + data);
+  
 });
 </script>
 <style>
