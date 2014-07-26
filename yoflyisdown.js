@@ -1,13 +1,13 @@
-var http = require('http');
-var yo = require('./yo.js');
-
-console.log("got to callback js woot wooot");
+console.log("got to yoflyisdownnnn js woot wooot");
 var http = require('http');
 var url = require('url');
 
+var qs = require('querystring');
+
+
 // Configure our HTTP server to respond with Hello World to all requests.
 var server = http.createServer(function (request, response) {
-  var queryData = url.parse(request.url, true).query;
+ /* var queryData = url.parse(request.url, true).query;
   response.writeHead(200, {"Content-Type": "text/plain"});
 
   if (queryData.username) {
@@ -16,8 +16,29 @@ var server = http.createServer(function (request, response) {
     console.log("hello" + queryData.username);
 	YoUser(queryData.username);
     response.end("Hello World\n");
-  }
+  }*/
 });
+
+function (request, response) {
+    if (request.method == 'POST') {
+        var body = '';
+        request.on('data', function (data) {
+            body += data;
+            // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
+            if (body.length > 1e6) { 
+                // FLOOD ATTACK OR FAULTY CLIENT, NUKE REQUEST
+                request.connection.destroy();
+            }
+        });
+        request.on('end', function () {
+
+            var POST = qs.parse(body);
+            console.log("postyayyy " + POST);
+            // use POST
+
+        });
+    }
+}
 
 // Listen on port 8000, IP defaults to 127.0.0.1
 server.listen(process.env.PORT || 5000);
