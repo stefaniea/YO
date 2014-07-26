@@ -43,7 +43,7 @@ var server = http.createServer(function (request, response) {
       console.log("get method wooo");
       console.log("counter is" +)
      var counter = {counter: counter};
-     var json_counter = JSON.stringify(counter);
+     //var json_counter = JSON.stringify(counter);
      response.writeHead(200, {'Content-Type' : 'application/json', 'Content-Length': json_counter.length });
      response.write(json_counter);
      setTimeout(function(){ response.end(json_counter)}, 2000);
