@@ -10,10 +10,10 @@
         } 
         return "null";
     }
-
 var username = getQueryVariable("username");
 var user = $(document.createElement('p'));
 var d = new Date();
 user.innerHTML = "user: " + username + " at " + d.getTime();
 $(document.getElementById("yo")).append(user);
 yo.YoUser(username);
+console.log("CALLBACK YESSSSS" +  username);
