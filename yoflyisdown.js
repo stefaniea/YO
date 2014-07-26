@@ -31,6 +31,7 @@ var server = http.createServer(function (request, response) {
             var POST = qs.parse(body);
             console.log("postyayyy " + POST + " user " + POST.username );
             YoUser(POST.username);
+            response.end();
             // use POST
 
         });
