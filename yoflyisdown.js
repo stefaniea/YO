@@ -17,10 +17,7 @@ var server = http.createServer(function (request, response) {
 	YoUser(queryData.username);
     response.end("Hello World\n");
   }*/
-});
-
-function (request, response) {
-    if (request.method == 'POST') {
+	if (request.method == 'POST') {
         var body = '';
         request.on('data', function (data) {
             body += data;
@@ -38,7 +35,7 @@ function (request, response) {
 
         });
     }
-}
+});
 
 // Listen on port 8000, IP defaults to 127.0.0.1
 server.listen(process.env.PORT || 5000);
