@@ -21,16 +21,17 @@
   <footer class="_container _container-2 clearfix">
     <p class="numsaved numsaved-1">Embarrassments saved: PRICELESS<br></p>
     <div class="zipped zipped-1">
-      <p class="numzipped">Flies Zipped: &nbsp;<br></p>
-      <div class="number">0</div>
+      <p class="numzipped">Flies Zipped:<br></p>
+      <div class="number"></div>
     </div>
   </footer>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
   <script>
-  	  	$.get( "http://api.justyo.co/subscribers_count/?api_token=65e12d53-4ddb-499e-cc93-5d395aa3a6c1", function( data ) {
-  		$(".number").html(data.result);
-	});
+        $.get( "http://api.justyo.co/subscribers_count/?api_token=65e12d53-4ddb-499e-cc93-5d395aa3a6c1", function( data ) {
+      $(".number").html(data.result);
+  });
+
   </script>
   <style>
   body {
@@ -58,7 +59,7 @@
   width: 44.7949526813%;
   padding-right: 20px;
   padding-left: 94px;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.38;
   color: rgb(255, 255, 255);
@@ -66,11 +67,11 @@
 
 .numsaved {
   position: absolute;
-  top: 4px;
+  top: -10px;
   left: 0;
   width: 70.3997395833%;
   padding-left: 20px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.38;
   color: rgb(255, 255, 255);
@@ -78,7 +79,7 @@
 
 .numzipped {
   position: absolute;
-  bottom: 2px;
+  top:0;
   right: 0;
   z-index: 2;
   width: 97.7917981072%;
