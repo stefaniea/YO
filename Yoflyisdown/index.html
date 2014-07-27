@@ -26,7 +26,12 @@
     </div>
   </footer>
 
-  <script src="js/jquery-min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+  <script>
+  	  	$.get( "http://api.justyo.co/subscribers_count/?api_token=65e12d53-4ddb-499e-cc93-5d395aa3a6c1", function( data ) {
+  		$(".number").html(data.result);
+	});
+  </script>
   <style>
   body {
   background-color: rgb(26, 130, 167);
